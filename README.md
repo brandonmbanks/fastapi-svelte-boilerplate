@@ -1,1 +1,1 @@
-# flask-svelte-boilerplate
+# fastapi-svelte-template

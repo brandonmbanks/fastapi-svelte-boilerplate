@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  app:
+    build: ./app
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./app:/app
+    depends_on:
+      - db
+    networks:
+      - boilerplate
+  db:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: ./web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    networks:
+      - boilerplate
+networks:
+  boilerplate:
