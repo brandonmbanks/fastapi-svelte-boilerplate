@@ -1,1 +1,1 @@
-# fastapi-svelte-boilerplate
+# fastapi-svelte-template
