@@ -12,8 +12,18 @@ asgiref==3.5.0
     # via uvicorn
 attrs==21.4.0
     # via pytest
+bcrypt==3.2.0
+    # via passlib
+cffi==1.15.0
+    # via
+    #   bcrypt
+    #   cryptography
 click==8.1.1
     # via uvicorn
+cryptography==36.0.2
+    # via python-jose
+ecdsa==0.17.0
+    # via python-jose
 fastapi==0.75.0
     # via -r requirements.in
 h11==0.13.0
@@ -26,10 +36,18 @@ iniconfig==1.1.1
     # via pytest
 packaging==21.3
     # via pytest
+passlib[bcrypt]==1.7.4
+    # via -r requirements.in
 pluggy==1.0.0
     # via pytest
 py==1.11.0
     # via pytest
+pyasn1==0.4.8
+    # via
+    #   python-jose
+    #   rsa
+pycparser==2.21
+    # via cffi
 pydantic==1.9.0
     # via fastapi
 pyparsing==3.0.7
@@ -37,9 +55,22 @@ pyparsing==3.0.7
 pytest==7.1.1
     # via -r requirements.in
 python-dotenv==0.20.0
-    # via uvicorn
+    # via
+    #   -r requirements.in
+    #   uvicorn
+python-jose[cryptography]==3.3.0
+    # via -r requirements.in
+python-multipart==0.0.5
+    # via -r requirements.in
 pyyaml==6.0
     # via uvicorn
+rsa==4.8
+    # via python-jose
+six==1.16.0
+    # via
+    #   bcrypt
+    #   ecdsa
+    #   python-multipart
 sniffio==1.2.0
     # via anyio
 starlette==0.17.1
